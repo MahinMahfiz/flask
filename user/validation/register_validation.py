@@ -1,3 +1,6 @@
+# user.validation.register_validation
+# @Author md mahin mahfiz <mahin.m360ict@gmail.com>
+
 def RegisterValidation(username,password,email,userrole,usertype):
     if (
         isinstance(username, str) and
@@ -6,9 +9,11 @@ def RegisterValidation(username,password,email,userrole,usertype):
         isinstance(email, str) and
         0 < len(email) <= 100 and
         isinstance(userrole, str) and
-        0 < len(username) <= 20 and
+        0 < len(userrole) <= 20 and
         isinstance(usertype, str) and
-        0 < len(username) <= 20
+        0 < len(usertype) <= 20 and
+        (userrole == 'buyer' or userrole == 'seller') and
+        (usertype == 'buyer' or usertype == 'seller')
     ):
         return True
     else:
